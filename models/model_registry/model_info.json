@@ -1,0 +1,8 @@
+{
+    "best_model": "Logistic_Regression",
+    "accuracy": 0.8537414965986394,
+    "f1_score": 0.4266666666666667,
+    "roc_auc": 0.7720733913343096,
+    "features_count": 44,
+    "training_date": "2026-02-13 20:10:54"
+}
