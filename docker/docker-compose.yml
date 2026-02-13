@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../models:/app/models
+    networks:
+      - attrition_network
+
+  ui:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ui
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000
+    depends_on:
+      - api
+    networks:
+      - attrition_network
+
+networks:
+  attrition_network:
+    driver: bridge
