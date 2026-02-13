@@ -16,9 +16,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# API endpoint (change if deployed)
-API_URL = "http://localhost:8000"
-
+# Get API URL from environment (for deployment)
+API_URL = os.environ.get("API_URL", "http://localhost:8000")
 # Title
 st.title("📊 Employee Attrition Risk Intelligence System")
 st.markdown("---")
