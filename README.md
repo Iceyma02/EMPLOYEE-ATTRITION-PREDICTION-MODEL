@@ -52,7 +52,7 @@ This end-to-end **Machine Learning system** predicts employee attrition risk wit
 - 🔌 **Production-ready API** for system integration
 - 💰 **Business impact analysis** with ROI calculations
 
-> *"This project demonstrates the ability to leverage data for strategic talent management — exactly what CBZ Holdings is looking for."*
+> *"This project demonstrates the ability to leverage data for strategic talent management"*
 
 ---
 
