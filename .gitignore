@@ -1,0 +1,280 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+poetry.lock
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+cython_debug/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.ipynb_checkpoints
+*.pyc
+jupyter_working/
+.notebook_checkpoints/
+
+# Models (don't commit large model files)
+models/*.pkl
+models/*.h5
+models/*.joblib
+models/model_registry/
+mlruns/
+mlflow/
+!models/best_model.pkl  # Optional: include if you want to commit the final model
+!models/preprocessor.pkl
+
+# Data (NEVER commit raw data)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+
+# Virtual Environment
+venv/
+env/
+.env
+.venv
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+.vscode-server/
+
+# Streamlit
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# API logs
+prediction_logs.json
+*.log
+api/*.log
+
+# Docker
+*.pid
+docker/docker-compose.override.yml
+.dockerignore
+*.pid
+docker/data/
+
+# Testing
+.cache
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+*.cover
+*.py,cover
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+instance/
+*.sql
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.flaskenv
+.env.example  # Keep this for reference
+
+# MLflow
+mlruns/
+mlartifacts/
+mlflow.db
+*.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# pyenv
+.python-version
+
+# celery beat schedule
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# profiling data
+*.prof
+
+# Local history
+.history/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.stackdump
+
+# Secrets
+*.pem
+*.key
+*.crt
+*.p12
+secrets.*
+credentials.*
+*.secret
+
+# Docker specific
+*.pid
+docker-compose.override.yml
+.dockerignore
+*.pid
+
+# Keep directories structure
+data/raw/.gitkeep
+data/processed/.gitkeep
+models/.gitkeep
+reports/figures/.gitkeep
+logs/.gitkeep
+
+# Optional: If you want to keep example data
+# !data/raw/example_*.csv
+
+# Optional: If you want to keep small test data
+# !data/processed/test_*.csv
