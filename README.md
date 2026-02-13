@@ -1,10 +1,4 @@
-# 📄 **COMPLETE PROFESSIONAL README.md**
 
-Copy and paste this entire README into your `README.md` file. Replace the placeholder text in **[brackets]** with your actual information.
-
----
-
-```markdown
 # 📊 Employee Attrition Prediction System — People Analytics MLOps Project
 
 <div align="center">
