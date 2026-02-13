@@ -17,7 +17,7 @@
 
 <br>
   
-### 🎯 **For CBZ Holdings — People Data & Analytics Officer Application**
+### 🎯 **For People Data & Analytics in HR Department**
 
 </div>
 
@@ -648,7 +648,7 @@ employee-attrition-prediction/
 
 <div align="center">
 
-### Built for CBZ Holdings - People Data and Analytics Officer Position
+### Built for People Data and Analytics HR Department
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/[YOUR_USERNAME])
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/[YOUR_USERNAME])
@@ -664,7 +664,7 @@ This project demonstrates:
 - ✅ **Stakeholder communication** through interactive dashboards
 - ✅ **Modern MLOps practices** (MLflow, Docker, CI/CD)
 
-**Why I built this:** Employee attrition costs organizations millions. I wanted to create a system that not only predicts who might leave, but also explains why and prescribes actionable solutions — exactly what the People Data and Analytics Officer role at CBZ Holdings requires.
+**Why I built this:** Employee attrition costs organizations millions. I wanted to create a system that not only predicts who might leave, but also explains why and prescribes actionable solutions — exactly what the People Data and Analytics HR Department requires.**
 
 ---
 
@@ -692,5 +692,5 @@ If you find this project valuable, please consider:
 
 <br>
 
-**Built with 🔥 for the CBZ Holdings interview**
+**Built with ❤️ for Data Science and Analytics**
 
