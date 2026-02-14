@@ -1,8 +1,4 @@
-# ✅ **COMPLETE FIXED README.md**
 
-Here's your fully updated README with all your live URLs and information:
-
-```markdown
 # 📊 Employee Attrition Prediction System — People Analytics MLOps Project
 
 <div align="center">
