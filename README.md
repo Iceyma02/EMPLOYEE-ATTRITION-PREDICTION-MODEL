@@ -325,7 +325,7 @@ The model is deployed as a **production-ready API** using FastAPI.
 
 ### 📍 **Base URL**
 ```
-https://your-api.onrender.com
+(https://employee-attrition-prediction-model.onrender.com)
 ```
 
 ### 🔍 **Health Check Endpoint**
@@ -423,7 +423,7 @@ The **HR-friendly dashboard** built with Streamlit allows non-technical users to
 
 <div align="center">
   
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://employee-attrition-prediction-model-akncxskvrphgdm7oxszr3e.streamlit.app/)
 
 </div>
 
