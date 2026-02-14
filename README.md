@@ -325,7 +325,7 @@ The model is deployed as a **production-ready API** using FastAPI.
 
 ### 📍 **Base URL**
 ```
-(https://employee-attrition-prediction-model.onrender.com)
+https://employee-attrition-prediction-model.onrender.com
 ```
 
 ### 🔍 **Health Check Endpoint**
