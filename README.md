@@ -205,14 +205,6 @@ After correcting correlations:
 
 ### Experiment Tracking with MLflow
 
-<div align="center">
-  
-<img src="reports/figures/mlflow_experiments.png" alt="MLflow Tracking" width="800"/>
-
-**Figure 8: MLflow UI showing experiment runs with parameters, metrics, and artifacts**
-
-</div>
-
 ### Models Evaluated
 
 | Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
