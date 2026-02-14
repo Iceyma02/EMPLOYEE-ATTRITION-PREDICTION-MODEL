@@ -11,6 +11,12 @@ import sys
 import logging
 import traceback
 
+# Add at the VERY TOP of api/main.py, right after imports
+import sys
+print("🚀 STARTUP DEBUG - Python version:", sys.version)
+print("🚀 STARTUP DEBUG - Current directory:", os.getcwd())
+print("🚀 STARTUP DEBUG - Files in current dir:", os.listdir('.'))
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
