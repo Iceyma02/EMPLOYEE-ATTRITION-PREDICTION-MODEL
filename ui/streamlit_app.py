@@ -17,7 +17,7 @@ st.set_page_config(
 )
 
 # Get API URL from environment (for deployment)
-API_URL = "https://employee-attrition-prediction-model.onrender.com"
+API_URL = (https://employee-attrition-prediction-model.onrender.com)
 # Title
 st.title("📊 Employee Attrition Risk Intelligence System")
 st.markdown("---")
