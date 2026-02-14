@@ -1,13 +1,7 @@
-# Create .streamlit folder
-New-Item -ItemType Directory -Path ".streamlit" -Force
-
-# Create config.toml
-@"
 [server]
-maxUploadSize = 10
+"maxUploadSize" = 10
 enableCORS = true
 enableXsrfProtection = true
 
 [browser]
-gatherUsageStats = false
-"@ | Out-File -FilePath ".streamlit/config.toml" -Encoding UTF8
+"gatherUsageStats" = false
