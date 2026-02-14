@@ -1,6 +1,7 @@
-# requirements.txt - STREAMLIT CLOUD COMPATIBLE VERSION
+# requirements.txt - STREAMLIT CLOUD VERSION
+# PINNED to versions that work with Python 3.13
 
-# Core data science - USE PRE-COMPILED WHEELS
+# Core data science - use pre-compiled wheels
 pandas==2.0.3
 numpy==1.24.3
 scikit-learn==1.3.0
@@ -9,16 +10,18 @@ matplotlib==3.7.2
 seaborn==0.12.2
 plotly==5.15.0
 
-# UI - Streamlit
+# UI
 streamlit==1.25.0
 
-# API Client - For connecting to your Render API
+# API Client
 requests==2.31.0
 
-# REMOVED PROBLEMATIC PACKAGES:
+# REMOVED ALL PROBLEMATIC PACKAGES:
 # - fastapi (not needed for UI)
 # - uvicorn (not needed for UI)
-# - psycopg2-binary (REMOVED - requires PostgreSQL)
-# - sqlalchemy (REMOVED - not needed for UI)
-# - mlflow (REMOVED - not needed for UI)
-# - -e . (REMOVED - causes path issues)
+# - psycopg2-binary (CAUSING ERROR - REMOVED)
+# - sqlalchemy (not needed)
+# - mlflow (not needed)
+# - -e . (REMOVED - causes import errors)
+# - httpx (not needed)
+# - pytest (not needed in production)
