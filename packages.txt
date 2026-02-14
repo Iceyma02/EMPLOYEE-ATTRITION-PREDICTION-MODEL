@@ -1,3 +1,2 @@
-# packages.txt - System dependencies for Streamlit Cloud
 build-essential
 python3-dev
