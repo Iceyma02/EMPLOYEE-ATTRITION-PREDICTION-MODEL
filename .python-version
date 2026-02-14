@@ -1,0 +1,7 @@
+# In PowerShell from project root
+echo "3.11.8" | Out-File -FilePath ".python-version" -Encoding ASCII -NoNewline
+
+# Commit and push
+git add .python-version
+git commit -m "Pin Python version to 3.11.8 for Render"
+git push origin main
