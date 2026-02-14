@@ -17,7 +17,16 @@ st.set_page_config(
 )
 
 # Get API URL from environment (for deployment)
+import os
+
+# Get API URL from environment, fallback to hardcoded URL
 API_URL = os.environ.get("API_URL", "https://employee-attrition-prediction-model.onrender.com")
+
+# Remove trailing slash if present
+if API_URL.endswith('/'):
+    API_URL = API_URL[:-1]
+    
+print(f"🔌 Connecting to API at: {API_URL}")
 # Title
 st.title("📊 Employee Attrition Risk Intelligence System")
 st.markdown("---")
