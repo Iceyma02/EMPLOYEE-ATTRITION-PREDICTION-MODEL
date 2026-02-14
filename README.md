@@ -11,7 +11,7 @@
 
 <br>
   
-<img src="reports/figures/dashboard_overview.png" alt="Dashboard Overview" width="800"/>
+<img src="reports/figures/dashboard_overview.jng" alt="Dashboard Overview" width="800"/>
   
 **Figure 1: Interactive Streamlit HR Dashboard for Real-time Attrition Prediction**
 
