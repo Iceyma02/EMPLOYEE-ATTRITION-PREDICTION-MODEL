@@ -1,23 +1,27 @@
+# ✅ **COMPLETE FIXED README.md**
 
+Here's your fully updated README with all your live URLs and information:
+
+```markdown
 # 📊 Employee Attrition Prediction System — People Analytics MLOps Project
 
 <div align="center">
   
-[![Live API](https://img.shields.io/badge/API-Live-success?style=for-the-badge&logo=fastapi)](https://your-api.onrender.com/health)
-[![Live Demo](https://img.shields.io/badge/Demo-Live-success?style=for-the-badge&logo=streamlit)](https://your-app.streamlit.app)
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge&logo=github)](https://github.com/[YOUR_USERNAME]/employee-attrition-prediction)
-[![Python](https://img.shields.io/badge/Python-3.9-blue?style=for-the-badge&logo=python)](https://python.org)
+[![Live API](https://img.shields.io/badge/API-Live-success?style=for-the-badge&logo=fastapi)](https://employee-attrition-prediction-model.onrender.com/health)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-success?style=for-the-badge&logo=streamlit)](https://employee-attrition-prediction-model-akncxskvrphgdm7oxszr3e.streamlit.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge&logo=github)](https://github.com/Iceyma02/EMPLOYEE-ATTRITION-PREDICTION-MODEL)
+[![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)](https://python.org)
 [![ML](https://img.shields.io/badge/ML-XGBoost-orange?style=for-the-badge)](https://xgboost.ai)
 
 <br>
   
-<img src="reports/figures/dashboard_overview.jpg" alt="Dashboard Overview" width="800"/>
+<img src="reports/figures/dashboard_overview.png" alt="Dashboard Overview" width="800"/>
   
 **Figure 1: Interactive Streamlit HR Dashboard for Real-time Attrition Prediction**
 
 <br>
   
-### 🎯 **For People Data & Analytics in HR Department**
+### 🎯 **Built by Anesu Manjengwa for People Data & Analytics**
 
 </div>
 
@@ -338,8 +342,8 @@ GET /health
 {
   "status": "healthy",
   "model": "Attrition_Predictor",
-  "model_path": "/app/models/best_model.pkl",
-  "timestamp": "2026-02-13T20:32:53.599960"
+  "model_path": "/opt/render/project/src/models/model_registry/best_model.pkl",
+  "timestamp": "2026-02-14T15:36:10.872Z"
 }
 ```
 
@@ -392,7 +396,7 @@ Content-Type: application/json
   "probability": 0.78,
   "risk_level": "High",
   "confidence_score": 0.78,
-  "timestamp": "2026-02-13T20:35:12.456789"
+  "timestamp": "2026-02-14T15:40:12.456Z"
 }
 ```
 
@@ -402,11 +406,11 @@ Content-Type: application/json
   
 <img src="reports/figures/fastapi_docs.png" alt="FastAPI Swagger UI" width="800"/>
 
-**Figure 13: Auto-generated Swagger documentation - try it live at `/docs`**
+**Figure 13: Auto-generated Swagger documentation - try it live at [`/docs`](https://employee-attrition-prediction-model.onrender.com/docs)**
 
 </div>
 
-Access the interactive docs at: **`/docs`**
+Access the interactive docs at: **[https://employee-attrition-prediction-model.onrender.com/docs](https://employee-attrition-prediction-model.onrender.com/docs)**
 
 ---
 
@@ -424,6 +428,8 @@ The **HR-friendly dashboard** built with Streamlit allows non-technical users to
 <div align="center">
   
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://employee-attrition-prediction-model-akncxskvrphgdm7oxszr3e.streamlit.app/)
+
+**👉 [Launch Live Dashboard](https://employee-attrition-prediction-model-akncxskvrphgdm7oxszr3e.streamlit.app/)**
 
 </div>
 
@@ -467,10 +473,10 @@ The **HR-friendly dashboard** built with Streamlit allows non-technical users to
 
 | Category | Technologies |
 |----------|--------------|
-| **Languages** | ![Python](https://img.shields.io/badge/Python-3.9-blue) |
+| **Languages** | ![Python](https://img.shields.io/badge/Python-3.11-blue) |
 | **Data Processing** | ![Pandas](https://img.shields.io/badge/Pandas-2.0-blue) ![NumPy](https://img.shields.io/badge/NumPy-1.24-blue) |
 | **Visualization** | ![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7-blue) ![Seaborn](https://img.shields.io/badge/Seaborn-0.12-blue) ![Plotly](https://img.shields.io/badge/Plotly-5.15-blue) |
-| **Machine Learning** | ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3-orange) ![XGBoost](https://img.shields.io/badge/XGBoost-1.7-orange) |
+| **Machine Learning** | ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.8-orange) ![XGBoost](https://img.shields.io/badge/XGBoost-1.7-orange) |
 | **Experiment Tracking** | ![MLflow](https://img.shields.io/badge/MLflow-2.5-blueviolet) |
 | **Backend API** | ![FastAPI](https://img.shields.io/badge/FastAPI-0.100-green) |
 | **Frontend** | ![Streamlit](https://img.shields.io/badge/Streamlit-1.25-red) |
@@ -485,7 +491,7 @@ The **HR-friendly dashboard** built with Streamlit allows non-technical users to
 ## 📦 **Installation**
 
 ### Prerequisites
-- Python 3.9+
+- Python 3.11+
 - Git
 - (Optional) Docker Desktop
 
@@ -493,18 +499,18 @@ The **HR-friendly dashboard** built with Streamlit allows non-technical users to
 
 ```bash
 # Clone the repository
-git clone https://github.com/[YOUR_USERNAME]/employee-attrition-prediction.git
-cd employee-attrition-prediction
+git clone https://github.com/Iceyma02/EMPLOYEE-ATTRITION-PREDICTION-MODEL.git
+cd EMPLOYEE-ATTRITION-PREDICTION-MODEL
 
 # Create virtual environment (optional but recommended)
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# On Windows:
+venv\Scripts\activate
+# On Mac/Linux:
+# source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-
-# Download dataset (if not already present)
-# Place IBM HR dataset in data/raw/HR_Employee_dataset.csv
 ```
 
 ### Run Locally
@@ -542,7 +548,7 @@ docker-compose -f docker/docker-compose.yml down
 ## 📁 **Project Structure**
 
 ```
-employee-attrition-prediction/
+EMPLOYEE-ATTRITION-PREDICTION-MODEL/
 │
 ├── .github/
 │   └── workflows/
@@ -568,14 +574,12 @@ employee-attrition-prediction/
 │       └── preprocessing.py              # Data pipeline
 │
 ├── models/
-│   ├── best_model.pkl                    # Trained XGBoost
-│   ├── preprocessor.pkl                   # Preprocessing pipeline
-│   └── model_registry/                     # MLflow storage
-│
-├── data/
-│   ├── raw/                                # Original data (gitignored)
-│   │   └── HR_Employee_dataset.csv
-│   └── processed/                          # Cleaned data (gitignored)
+│   ├── model_registry/                     # MLflow storage
+│   │   ├── best_model.pkl                    # Trained XGBoost
+│   │   ├── preprocessor.pkl                   # Preprocessing pipeline
+│   │   ├── feature_names.pkl
+│   │   └── model_info.json
+│   └── ...
 │
 ├── reports/
 │   └── figures/                            # EDA charts
@@ -586,10 +590,8 @@ employee-attrition-prediction/
 │       ├── correlation_heatmap.png
 │       ├── model_comparison.png
 │       ├── confusion_matrix.png
-│       ├── feature_importance_shap.png
 │       ├── fastapi_docs.png
-│       ├── dashboard_prediction.png
-│       └── dashboard_analytics.png
+│       └── ...
 │
 ├── docker/
 │   ├── Dockerfile.api
@@ -603,7 +605,8 @@ employee-attrition-prediction/
 ├── .gitignore
 ├── .env.example
 ├── requirements.txt
-├── setup.py
+├── runtime.txt
+├── .python-version
 └── README.md
 ```
 
@@ -615,32 +618,10 @@ employee-attrition-prediction/
 
 | Service | URL | Status |
 |---------|-----|--------|
-| **API** | `https://your-api.onrender.com` | ✅ Live |
-| **API Docs** | `https://your-api.onrender.com/docs` | ✅ Live |
-| **Health Check** | `https://your-api.onrender.com/health` | ✅ Live |
-| **Dashboard** | `https://your-app.streamlit.app` | ✅ Live |
-
-### Deployment Steps
-
-1. **Push code to GitHub**
-   ```bash
-   git add .
-   git commit -m "Ready for deployment"
-   git push origin main
-   ```
-
-2. **Deploy API to Render**
-   - Create account at [render.com](https://render.com)
-   - Connect GitHub repository
-   - Create new Web Service with:
-     - Build Command: `pip install -r requirements.txt`
-     - Start Command: `uvicorn api.main:app --host 0.0.0.0 --port $PORT`
-
-3. **Deploy UI to Streamlit Cloud**
-   - Go to [share.streamlit.io](https://share.streamlit.io)
-   - Connect GitHub repository
-   - Set main file: `ui/streamlit_app.py`
-   - Add secret: `API_URL = https://your-api.onrender.com`
+| **API** | [https://employee-attrition-prediction-model.onrender.com](https://employee-attrition-prediction-model.onrender.com) | ✅ Live |
+| **API Docs** | [https://employee-attrition-prediction-model.onrender.com/docs](https://employee-attrition-prediction-model.onrender.com/docs) | ✅ Live |
+| **Health Check** | [https://employee-attrition-prediction-model.onrender.com/health](https://employee-attrition-prediction-model.onrender.com/health) | ✅ Live |
+| **Dashboard** | [https://employee-attrition-prediction-model-akncxskvrphgdm7oxszr3e.streamlit.app/](https://employee-attrition-prediction-model-akncxskvrphgdm7oxszr3e.streamlit.app/) | ✅ Live |
 
 ---
 
@@ -648,11 +629,11 @@ employee-attrition-prediction/
 
 <div align="center">
 
-### Built for People Data and Analytics HR Department
+### **Anesu Manjengwa**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/[YOUR_USERNAME])
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/[YOUR_USERNAME])
-[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:your.email@example.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/anesu-manjengwa-684766247/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/Iceyma02)
+[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:manjengwap10@gmail.com)
 
 </div>
 
@@ -664,7 +645,7 @@ This project demonstrates:
 - ✅ **Stakeholder communication** through interactive dashboards
 - ✅ **Modern MLOps practices** (MLflow, Docker, CI/CD)
 
-**Why I built this:** Employee attrition costs organizations millions. I wanted to create a system that not only predicts who might leave, but also explains why and prescribes actionable solutions — exactly what the People Data and Analytics HR Department requires.**
+**Why I built this:** Employee attrition costs organizations millions. I wanted to create a system that not only predicts who might leave, but also explains why and prescribes actionable solutions — exactly what modern People Analytics teams need.
 
 ---
 
@@ -678,7 +659,7 @@ This project is open source and available under the MIT License.
 
 If you find this project valuable, please consider:
 
-- ⭐ Starring the repository
+- ⭐ Starring the [repository](https://github.com/Iceyma02/EMPLOYEE-ATTRITION-PREDICTION-MODEL)
 - 🔗 Sharing it with your network
 - 📧 Reaching out for collaboration
 
@@ -688,9 +669,9 @@ If you find this project valuable, please consider:
 
 ### 🎯 **Ready to reduce attrition and save millions? Let's talk.**
 
-**[View Live Demo](https://your-app.streamlit.app)** • **[API Documentation](https://your-api.onrender.com/docs)** • **[GitHub Repository](https://github.com/[YOUR_USERNAME]/employee-attrition-prediction)**
+**[View Live Demo](https://employee-attrition-prediction-model-akncxskvrphgdm7oxszr3e.streamlit.app/)** • **[API Documentation](https://employee-attrition-prediction-model.onrender.com/docs)** • **[GitHub Repository](https://github.com/Iceyma02/EMPLOYEE-ATTRITION-PREDICTION-MODEL)**
 
 <br>
 
-**Built with ❤️ for Data Science and Analytics**
+**Built with ❤️ by Anesu Manjengwa for Data Science and Analytics**
 
