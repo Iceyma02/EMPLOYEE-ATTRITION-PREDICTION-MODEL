@@ -9,49 +9,77 @@ from datetime import datetime
 import json
 import os
 
-# Page config
+# ------------------------------
+# Page configuration (must be first Streamlit command)
+# ------------------------------
 st.set_page_config(
     page_title="HR Attrition Predictor",
     page_icon="📊",
     layout="wide"
 )
 
-# Get API URL from environment (for deployment)
-import os
-
-# Get API URL from environment, fallback to hardcoded URL
+# ------------------------------
+# Constants & environment
+# ------------------------------
 API_URL = os.environ.get("API_URL", "https://employee-attrition-prediction-model.onrender.com")
-
-# Remove trailing slash if present
 if API_URL.endswith('/'):
     API_URL = API_URL[:-1]
-    
-print(f"🔌 Connecting to API at: {API_URL}")
-# Title
-st.title("📊 Employee Attrition Risk Intelligence System")
-st.markdown("---")
 
-# Sidebar
-st.sidebar.image("https://img.icons8.com/color/96/000000/group.png", width=100)
-st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Predictor", "Dashboard", "About"])
+# Optional: print for server logs (doesn't affect UI)
+print(f"🔌 App will connect to API at: {API_URL}")
 
-# Check API health
-@st.cache_data(ttl=60)
+# ------------------------------
+# Initialize session state
+# ------------------------------
+if "api_connected" not in st.session_state:
+    st.session_state.api_connected = None      # None = unknown, True/False = known
+    st.session_state.api_message = ""
+
+# ------------------------------
+# Helper function to check API health
+# ------------------------------
 def check_api_health():
+    """Test if API is reachable. Returns (bool, message)."""
     try:
-        response = requests.get(f"{API_URL}/health")
-        return response.status_code == 200
-    except:
-        return False
+        response = requests.get(f"{API_URL}/health", timeout=10)
+        if response.status_code == 200:
+            return True, "✅ API Connected"
+        else:
+            return False, f"⚠️ API responded with status {response.status_code}"
+    except requests.exceptions.ConnectionError:
+        return False, "⏳ API is sleeping – click again after 15 seconds"
+    except Exception as e:
+        return False, f"❌ Error: {str(e)}"
 
-api_healthy = check_api_health()
+# ------------------------------
+# Sidebar navigation & API connection control
+# ------------------------------
+with st.sidebar:
+    st.image("https://img.icons8.com/color/96/000000/group.png", width=100)
+    st.title("Navigation")
+    page = st.radio("Go to", ["Predictor", "Dashboard", "About"])
+    
+    st.markdown("---")
+    st.subheader("🔌 API Connection")
+    
+    # Button to manually test API connection
+    if st.button("🔄 Check API Status", use_container_width=True):
+        with st.spinner("Connecting to API..."):
+            ok, msg = check_api_health()
+            st.session_state.api_connected = ok
+            st.session_state.api_message = msg
+    
+    # Display current status
+    if st.session_state.api_connected is True:
+        st.success(st.session_state.api_message)
+    elif st.session_state.api_connected is False:
+        st.error(st.session_state.api_message)
+    else:
+        st.info("Click 'Check API Status' to connect")
 
-if not api_healthy:
-    st.sidebar.error("⚠️ API is not reachable. Make sure the API is running.")
-else:
-    st.sidebar.success("✅ API Connected")
-
+# ------------------------------
+# Main content based on selected page
+# ------------------------------
 if page == "Predictor":
     st.header("🔮 Individual Employee Risk Assessment")
     
@@ -110,9 +138,24 @@ if page == "Predictor":
         training_times = st.slider("Training Times Last Year", 0, 6, 2)
         performance_rating = st.slider("Performance Rating (3-4)", 3, 4, 3)
     
+    # Predict button
     if st.button("🔮 Predict Attrition Risk", type="primary", use_container_width=True):
+        # Check API connection before attempting prediction
+        if st.session_state.api_connected is False:
+            st.error("❌ API is not connected. Please click 'Check API Status' in the sidebar first.")
+            st.stop()
         
-        # Prepare the data
+        # If status is unknown (None), try a quick health check now
+        if st.session_state.api_connected is None:
+            with st.spinner("Connecting to API..."):
+                ok, msg = check_api_health()
+                st.session_state.api_connected = ok
+                st.session_state.api_message = msg
+                if not ok:
+                    st.error(f"Cannot connect to API: {msg}")
+                    st.stop()
+        
+        # Prepare data for prediction
         employee_data = {
             "Age": age,
             "BusinessTravel": business_travel,
@@ -124,13 +167,13 @@ if page == "Predictor":
             "EnvironmentSatisfaction": env_satisfaction,
             "Gender": gender,
             "HourlyRate": hourly_rate,
-            "JobInvolvement": 3,  # Default
+            "JobInvolvement": 3,  # default
             "JobLevel": job_level,
             "JobRole": job_role,
             "JobSatisfaction": job_satisfaction,
             "MaritalStatus": marital_status,
             "MonthlyIncome": monthly_income,
-            "MonthlyRate": 15000,  # Default
+            "MonthlyRate": 15000,  # default
             "NumCompaniesWorked": num_companies,
             "OverTime": overtime,
             "PercentSalaryHike": percent_hike,
@@ -148,7 +191,7 @@ if page == "Predictor":
         
         with st.spinner("Calculating risk..."):
             try:
-                response = requests.post(f"{API_URL}/predict", json=employee_data)
+                response = requests.post(f"{API_URL}/predict", json=employee_data, timeout=30)
                 
                 if response.status_code == 200:
                     result = response.json()
@@ -163,17 +206,17 @@ if page == "Predictor":
                             "Medium": "#ffa500",
                             "Low": "#00cc96"
                         }
-                        st.markdown(f"### Risk Level")
+                        st.markdown("### Risk Level")
                         st.markdown(f"<h1 style='color: {risk_color[result['risk_level']]};'>{result['risk_level']}</h1>", 
                                   unsafe_allow_html=True)
                     
                     with col_res2:
-                        st.markdown(f"### Probability")
+                        st.markdown("### Probability")
                         st.markdown(f"<h1>{result['probability']*100:.1f}%</h1>", 
                                   unsafe_allow_html=True)
                     
                     with col_res3:
-                        st.markdown(f"### Confidence")
+                        st.markdown("### Confidence")
                         st.markdown(f"<h1>{result['confidence_score']*100:.1f}%</h1>", 
                                   unsafe_allow_html=True)
                     
@@ -226,16 +269,21 @@ if page == "Predictor":
                     
                 else:
                     st.error(f"Error: {response.status_code} - {response.text}")
-                    
+                    # If we get a 5xx, maybe API is temporarily down
+                    if response.status_code >= 500:
+                        st.session_state.api_connected = None  # reset for next attempt
+                        
+            except requests.exceptions.ConnectionError:
+                st.error("❌ Cannot connect to API. It may be sleeping. Please wait 15 seconds and try again.")
+                st.session_state.api_connected = False  # mark as disconnected
             except Exception as e:
-                st.error(f"Connection Error: {e}")
+                st.error(f"Prediction failed: {e}")
 
 elif page == "Dashboard":
     st.header("📈 Workforce Analytics Dashboard")
     
-    # Key metrics
+    # Key metrics (static, from EDA)
     col1, col2, col3, col4 = st.columns(4)
-    
     with col1:
         st.metric("Total Employees", "1,470", "IBM Dataset")
     with col2:
@@ -245,15 +293,13 @@ elif page == "Dashboard":
     with col4:
         st.metric("Model Accuracy", "87.7%", "+2.1%")
     
-    # Feature importance from EDA
+    # Feature importance chart
     st.subheader("🔑 Key Drivers of Attrition")
-    
     importance_data = pd.DataFrame({
         'Feature': ['Overtime', 'Monthly Income', 'Years at Company', 
                    'Age', 'Job Satisfaction', 'Distance from Home'],
         'Importance': [0.246, -0.160, -0.134, -0.159, -0.103, 0.078]
     })
-    
     fig = px.bar(importance_data, x='Importance', y='Feature', 
                  orientation='h', 
                  color='Importance',
@@ -261,9 +307,8 @@ elif page == "Dashboard":
                  title="Feature Correlation with Attrition")
     st.plotly_chart(fig, use_container_width=True)
     
-    # Two columns for insights
+    # Overtime impact
     col_left, col_right = st.columns(2)
-    
     with col_left:
         st.subheader("⏰ Overtime Impact")
         ot_data = pd.DataFrame({
@@ -337,4 +382,11 @@ else:  # About page
     """)
     
     st.image("https://img.icons8.com/color/96/000000/api-settings.png", width=100)
-    st.success("API Status: Connected" if api_healthy else "API Status: Disconnected")
+    
+    # Show API connection status in About page as well (for convenience)
+    if st.session_state.api_connected is True:
+        st.success("✅ API is connected")
+    elif st.session_state.api_connected is False:
+        st.error("❌ API is not reachable")
+    else:
+        st.info("ℹ️ API status unknown – use sidebar to check")
